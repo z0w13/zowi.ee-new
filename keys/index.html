@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Zowi.ee :: Encryption Keys</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=497a1317ceb28e8a80ef">
+  </head>
+  <body>
+    <div class="container flex lg:flex-no-wrap flex-wrap justify-center mx-auto mt-8 pt-4 pr-8 pl-8 bg-gray-800 rounded-lg">
+      <div class="self-center xl:flex-grow flex-shrink">
+        <h1 class="text-6xl text-center title">
+          <a class="underline" href="/">Zowie the Lynx</a>
+        </h1>
+        <p class="text-lg ml-8 mr-8 text-center">
+          Heya, I'm Zowie, a lynx in human clothing!
+          I use she/her pronouns and am a femme non-binary girl, nyah!
+        </p>
+      </div>
+			<div class="flex-shrink-0">
+        <figure>
+          <img
+            class="icon"
+            src="/assets/images/zowie.png"
+            aria-describedby="logo-desc"
+            alt="drawing of an anthropomorphic lynx girl, by @_RAT_BRAT_"
+          />
+          <p id="logo-desc" class="sr-only">
+            Drawing of an anthropomorphic lynx girl,
+            her eartufts and hair have a brown to pink fade and she has brown eyes,
+            she is smiling.
+
+            Drawn by <a href="https://twitter.com/_RAT_BRAT_">@_RAT_BRAT_</a>
+          </p>
+        </figure>
+			</div>
+    </div>
+
+    <div class="container mx-auto m-4 p-8 bg-gray-800 rounded-lg content">
+        <div class="content">
+      <table class="w-full">
+    <tr>
+      <td colspan="3">
+        <h1>Matrix</h1>
+      </td>
+    </tr>
+          <tr class="border-solid border-t-2 border-white">
+        <td>Riot (Desktop)</td>
+        <td class="font-mono">ID: VYSZSLKJQT</td>
+        <td class="pb-2 pt-2">
+          <pre>yqvT EdsD nwus GWHS AOrm gxnK<br />YZ4C o93g BVto RTLb DR0</pre>
+          <div class="flex key-compare">
+            <form>
+              <input type="text" />
+              <button type="submit">Compare!</button>
+              <span class="p-2"></span>
+            </form>
+          </div>
+        </td>
+      </tr>
+          <tr class="border-solid border-t-2 border-white">
+        <td>Riot (Laptop)</td>
+        <td class="font-mono">ID: YJCNLEMXIR</td>
+        <td class="pb-2 pt-2">
+          <pre>23IV ++7X EVkO LVDA ydHN Ltt8<br />iMnS pmWR jOPj 6lQo R+M</pre>
+          <div class="flex key-compare">
+            <form>
+              <input type="text" />
+              <button type="submit">Compare!</button>
+              <span class="p-2"></span>
+            </form>
+          </div>
+        </td>
+      </tr>
+          <tr class="border-solid border-t-2 border-white">
+        <td>Riot (Phone)</td>
+        <td class="font-mono">ID: KISLUNDOCZ</td>
+        <td class="pb-2 pt-2">
+          <pre>2UZK ERYp Yxxv JsTO MhcC MJ52<br />d//D ZH5W Grg2 nZsq HVc</pre>
+          <div class="flex key-compare">
+            <form>
+              <input type="text" />
+              <button type="submit">Compare!</button>
+              <span class="p-2"></span>
+            </form>
+          </div>
+        </td>
+      </tr>
+        <tr>
+      <td colspan="3">
+        <h1>XMPP</h1>
+      </td>
+    </tr>
+          <tr class="border-solid border-t-2 border-white">
+        <td colspan="2">Gajim (Desktop)</td>
+        <td class="pb-2 pt-2">
+          <pre>6A1A212D 40964F56 0F643CFE 43954986<br />A3C097D2 1564A8BE 5C44E7FA DB9D341E</pre>
+          <div class="flex key-compare">
+            <form>
+              <input type="text" />
+              <button type="submit">Compare!</button>
+              <span class="p-2"></span>
+            </form>
+          </div>
+        </td>
+      </tr>
+          <tr class="border-solid border-t-2 border-white">
+        <td colspan="2">Gajim (Laptop)</td>
+        <td class="pb-2 pt-2">
+          <pre>7026EDD3 3CCABDC7 E46937C8 BD52E90F<br />69FD8D52 455D65DD 179F0CD3 BF31F14C</pre>
+          <div class="flex key-compare">
+            <form>
+              <input type="text" />
+              <button type="submit">Compare!</button>
+              <span class="p-2"></span>
+            </form>
+          </div>
+        </td>
+      </tr>
+      </table>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("paste", function(evt) {
+          var content = (event.clipboardData || window.clipboardData).getData("text");
+          this.value = content.trim();
+          evt.preventDefault();
+        });
+      }
+
+      var forms = document.getElementsByTagName("form");
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener("submit", function(evt) {
+          evt.preventDefault();
+
+          const match = this.parentNode.parentNode.getElementsByTagName("pre")[0].textContent.replace(/\s/g, "");
+          const resultSpan = this.getElementsByTagName("span")[0];
+          const inputElem = this.getElementsByTagName("input")[0];
+          const input = inputElem.value.replace(/\s/g, "");
+
+          this.classList.remove("success", "error")
+          this.classList.add(match == input ? "success" : "error");
+          resultSpan.innerHTML = match == input ? "match!" : "no match :(";
+        });
+      }
+    });
+  </script>
+  </div>
+    </div>
+
+    <div class="container mx-auto m-4 text-center italic text-xs rounded-lg content">
+      <p>Copyright (c) Zowie 2019. Lynx drawing by <a href="https://twitter.com/_RAT_BRAT_">@_RAT_BRAT_</a>.</p>
+    </div>
+  </body>
+</html>
