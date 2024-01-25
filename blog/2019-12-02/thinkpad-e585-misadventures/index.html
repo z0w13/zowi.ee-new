@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="/assets/build/css/main.css?id=6b330477d5979286c54f">
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=163676e3c829a89d54012eca94c60f82">
   </head>
   <body>
     <div class="container flex lg:flex-no-wrap flex-wrap justify-center mx-auto mt-8 pt-4 pr-8 pl-8 bg-gray-800 rounded-lg">
@@ -43,8 +43,10 @@
 
   <div>
     <p>Notes on trying to get the Lenovo Thinkpad E585 to work on linux.</p>
+
 <p>Had to update the BIOS to get Linux to boot at all,
 and also updated the NVME driver using info from <a href="https://gist.github.com/klingtnet/22ab0b907e2d9d20f98c72c93ea5dd37">here</a>.</p>
+
 <ul>
 <li>NVME SSD Model: LENSE30256GMSP34MEAT3TA</li>
 <li>Current BIOS version: R0UET76W (1.56)</li>
@@ -52,47 +54,67 @@ and also updated the NVME driver using info from <a href="https://gist.github.co
 <li>Swap: swapfile used</li>
 <li>BIOS settings: made no difference</li>
 </ul>
+
 <h1>Arch Linux</h1>
+
 <ul>
 <li>Filesystem: btrfs on LUKS</li>
 <li>DM/DE: xorg, LightDM, Cinnamon</li>
 <li>Boot params: <code>irqpoll irqfixup</code></li>
 <li>OS updated on: 2019-12-01</li>
 </ul>
+
 <p>Kernels Tested:</p>
+
 <ul>
 <li>linux-5.3.13-arch-1</li>
 <li>linux-5.4.1-arch-1 (trunk pkgbuild)</li>
 <li>linux-amd-raven 5.3.v.14-1 (AUR)</li>
 </ul>
+
 <h2>Suspend</h2>
+
 <p>Seems to work fine</p>
+
 <h2>Hibernate (uswsusp)</h2>
+
 <p>Does not turn off after hibernating, only works intermittently, sometimes crashing before hibernate.
 Additionally TTYs stay blank after hibernate.</p>
+
 <h2>Hibernate (swsusp)</h2>
+
 <p>Boot params: <code>irqpoll irqfixup resume=[...] resume_offset=[...]</code></p>
+
 <p>Doesn't work at all (Haven't put too much effort into it)</p>
+
 <h1>Linux Mint 19.2</h1>
+
 <ul>
 <li>Kernel: <code>4.15.0-54-generic</code></li>
 <li>Filesystem: ext4</li>
 <li>Boot params: <code>irqpoll irqfixup resume=[...] resume_offset=[...]</code></li>
 </ul>
+
 <h2>Suspend</h2>
+
 <p>Seems to work fine</p>
+
 <h2>Hibernate (swsusp)</h2>
+
 <p>Doesn't work, black screen after restart</p>
+
 <h1>Todo</h1>
+
 <ul>
 <li>Test card reader &amp; bluetooth</li>
-</ul>  </div>
+</ul>
+  </div>
     </div>
 
     <div class="container mx-auto m-4 text-center italic text-xs rounded-lg content">
       <p>
         Copyright (c) Zowie 2019.
-        Lynx drawing by <a href="https://twitter.com/_RAT_BRAT_">@_RAT_BRAT_</a>.
+        Lynx drawing by <a href="https://x.com/SHARKD0GG0">@SHARKD0GG0</a>.
         <a href="/attribution/">Other Attribution</a>
       </p>
     </div>
